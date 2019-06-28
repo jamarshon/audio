@@ -49,6 +49,11 @@ setup(
             libraries=['sox'],
             extra_compile_args=eca,
             extra_link_args=ela),
+        CppExtension(
+            '_fft',
+            ['torchaudio/fft.cpp'],
+            extra_compile_args=eca,
+            extra_link_args=ela),
     ],
     cmdclass={'build_ext': BuildExtension},
     install_requires=['torch']

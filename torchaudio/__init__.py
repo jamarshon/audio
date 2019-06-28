@@ -3,6 +3,7 @@ import os.path
 
 import torch
 import _torch_sox
+import _fft
 
 from torchaudio import transforms, datasets, kaldi_io, sox_effects, legacy, compliance
 

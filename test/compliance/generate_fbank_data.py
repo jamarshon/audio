@@ -143,7 +143,14 @@ def decode(fn):
     torch.set_printoptions(precision=10, sci_mode=False)
     print(res)
     print(kaldi_output_dict['my_id'])
+    print((res-kaldi_output_dict['my_id']).abs())
+    print((res-kaldi_output_dict['my_id']).abs()/kaldi_output_dict['my_id'])
 
 
 if __name__ == '__main__':
-    run()
+    # largest absolute error
+    fn = 'fbank-1.6134-0.6389-1.0625-0.8125-7384-false-184-7-0.08-true-false-true-true-false-false-false-true-2759-306-1.0000-rectangular.ark'
+    # largest reletaive error
+    fn = 'fbank-3.0442-4.0677-1.0625-1.1250-5086-true-1013-4-0.99-false-false-true-true-false-true-true-false-4997-4836-1.9525-hamming.ark'
+    decode(fn)
+    # run()
