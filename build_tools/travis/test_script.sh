@@ -8,6 +8,9 @@ set -e
 python --version
 
 run_tests() {
+  echo "melo"
+  gcc --version
+  g++ --version
   # find all the test files that match "test*.py"
   TEST_FILES="$(find test/ -type f -name "test*.py" | sort)"
   echo "Test files are:"
