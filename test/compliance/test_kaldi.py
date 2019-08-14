@@ -2,6 +2,7 @@ import math
 import os
 import test.common_utils
 import torch
+import _fft
 import torchaudio
 import torchaudio.compliance.kaldi as kaldi
 import unittest
@@ -48,6 +49,8 @@ class Test_Kaldi(unittest.TestCase):
     test_filepath = os.path.join(test_dirpath, 'assets', 'kaldi_file.wav')
     kaldi_output_dir = os.path.join(test_dirpath, 'assets', 'kaldi')
     test_filepaths = {'spec': [], 'fbank': []}
+    print('hello')
+    print(_fft.fft(torch.rand(2,100)))
 
     # separating test files by their types (e.g 'spec', 'fbank', etc.)
     for f in os.listdir(kaldi_output_dir):

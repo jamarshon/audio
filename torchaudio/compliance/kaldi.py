@@ -298,8 +298,6 @@ def vtln_warp_freq(vtln_low_cutoff, vtln_high_cutoff, low_freq, high_freq,
     Outputs:
         Tensor: freq after vtln warp
     """
-    torch.set_printoptions(precision=10, sci_mode=False)
-    import pdb; pdb.set_trace()
     assert vtln_low_cutoff > low_freq, 'be sure to set the vtln_low option higher than low_freq'
     assert vtln_high_cutoff < high_freq, 'be sure to set the vtln_high option lower than high_freq [or negative]'
     l = vtln_low_cutoff * max(1.0, vtln_warp_factor)
