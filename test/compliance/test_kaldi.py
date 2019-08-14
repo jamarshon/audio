@@ -7,6 +7,11 @@ import torchaudio
 import torchaudio.compliance.kaldi as kaldi
 import unittest
 
+print('hello')
+print(_fft.__dir__())
+print(_fft.__file__)
+print(_fft.fft(torch.rand(2,100)))
+    
 
 def extract_window(window, wave, f, frame_length, frame_shift, snip_edges):
     # just a copy of ExtractWindow from feature-window.cc in python
@@ -49,8 +54,6 @@ class Test_Kaldi(unittest.TestCase):
     test_filepath = os.path.join(test_dirpath, 'assets', 'kaldi_file.wav')
     kaldi_output_dir = os.path.join(test_dirpath, 'assets', 'kaldi')
     test_filepaths = {'spec': [], 'fbank': []}
-    print('hello')
-    print(_fft.fft(torch.rand(2,100)))
 
     # separating test files by their types (e.g 'spec', 'fbank', etc.)
     for f in os.listdir(kaldi_output_dir):
